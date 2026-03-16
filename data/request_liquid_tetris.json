@@ -1,0 +1,63 @@
+{
+  "task_id": "task_liquid_tetris",
+  "shipment_info": {
+    "total_pallets_available": 2,
+    "total_sku_types": 3
+  },
+  "pallets": [
+    {
+      "pallet_index": 0,
+      "type_id": "EUR_1200x800",
+      "length_mm": 1200,
+      "width_mm": 800,
+      "max_height_mm": 1800,
+      "max_weight_kg": 1000.0
+    },
+    {
+      "pallet_index": 1,
+      "type_id": "US_48x40",
+      "length_mm": 1219,
+      "width_mm": 1016,
+      "max_height_mm": 2000,
+      "max_weight_kg": 1000.0
+    }
+  ],
+  "boxes": [
+    {
+      "sku_id": "SKU-WATER-5930",
+      "description": "Water Pack",
+      "length_mm": 281,
+      "width_mm": 188,
+      "height_mm": 325,
+      "weight_kg": 9.13,
+      "quantity": 70,
+      "strict_upright": true,
+      "fragile": false,
+      "stackable": true
+    },
+    {
+      "sku_id": "SKU-WINE-1069",
+      "description": "Wine Case",
+      "length_mm": 246,
+      "width_mm": 171,
+      "height_mm": 320,
+      "weight_kg": 8.05,
+      "quantity": 53,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": true
+    },
+    {
+      "sku_id": "SKU-CANNED-2640",
+      "description": "Canned Peas",
+      "length_mm": 303,
+      "width_mm": 198,
+      "height_mm": 120,
+      "weight_kg": 5.92,
+      "quantity": 91,
+      "strict_upright": true,
+      "fragile": false,
+      "stackable": true
+    }
+  ]
+}

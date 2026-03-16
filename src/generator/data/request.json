@@ -1,0 +1,148 @@
+{
+  "task_id": "task_121748",
+  "metadata": {
+    "generated_at": "2026-03-15T12:17:48.311754",
+    "config_used": {
+      "seed": 42,
+      "complexity": "medium",
+      "pallet_count_min": 1,
+      "pallet_count_max": 3,
+      "pallet_type_ids": [
+        "EUR_1200x800",
+        "EUR_1200x1000",
+        "US_48x40"
+      ],
+      "sku_count_min": 4,
+      "sku_count_max": 6,
+      "quantity_per_sku_min": 10,
+      "quantity_per_sku_max": 50,
+      "dimension_noise_ratio": 0.02,
+      "weight_noise_ratio": 0.02,
+      "force_fragile_ratio": 0.3,
+      "force_upright_ratio": 0.0,
+      "enable_load_bearing": true,
+      "include_archetypes": [],
+      "exclude_archetypes": []
+    },
+    "complexity_profile": "medium"
+  },
+  "shipment_info": {
+    "total_pallets": 3,
+    "total_sku_types": 5,
+    "total_boxes_estimated": 182
+  },
+  "pallets": [
+    {
+      "pallet_index": 0,
+      "type_id": "EUR_1200x800",
+      "dimensions_mm": [
+        1200,
+        800
+      ],
+      "max_height_mm": 1800,
+      "max_weight_kg": 1000.0
+    },
+    {
+      "pallet_index": 1,
+      "type_id": "EUR_1200x800",
+      "dimensions_mm": [
+        1200,
+        800
+      ],
+      "max_height_mm": 1800,
+      "max_weight_kg": 1000.0
+    },
+    {
+      "pallet_index": 2,
+      "type_id": "US_48x40",
+      "dimensions_mm": [
+        1219,
+        1016
+      ],
+      "max_height_mm": 2000,
+      "max_weight_kg": 1000.0
+    }
+  ],
+  "boxes": [
+    {
+      "sku_id": "SKU-WINE-9279",
+      "description": "Wine Case",
+      "dimensions_mm": [
+        252,
+        173,
+        315
+      ],
+      "weight_kg": 7.98,
+      "quantity": 48,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 4.2,
+      "max_stack_layers": 1
+    },
+    {
+      "sku_id": "SKU-PAPER-3615",
+      "description": "Paper Towels",
+      "dimensions_mm": [
+        504,
+        403,
+        449
+      ],
+      "weight_kg": 3.99,
+      "quantity": 37,
+      "strict_upright": false,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 3.35,
+      "max_stack_layers": 1
+    },
+    {
+      "sku_id": "SKU-WATER-5333",
+      "description": "Water Pack",
+      "dimensions_mm": [
+        277,
+        192,
+        325
+      ],
+      "weight_kg": 9.16,
+      "quantity": 12,
+      "strict_upright": true,
+      "fragile": false,
+      "stackable": true,
+      "load_bearing_kg": 146.07,
+      "max_stack_layers": 13
+    },
+    {
+      "sku_id": "SKU-EGGS-6925",
+      "description": "Eggs 360pcs",
+      "dimensions_mm": [
+        621,
+        325,
+        344
+      ],
+      "weight_kg": 21.82,
+      "quantity": 46,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 15.11,
+      "max_stack_layers": 1
+    },
+    {
+      "sku_id": "SKU-BANANA-5554",
+      "description": "Bananas Box",
+      "dimensions_mm": [
+        493,
+        390,
+        237
+      ],
+      "weight_kg": 18.68,
+      "quantity": 39,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 21.21,
+      "max_stack_layers": 2
+    }
+  ]
+}

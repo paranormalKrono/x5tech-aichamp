@@ -1,0 +1,127 @@
+{
+  "task_id": "test_20260315_000023",
+  "generated_at": "2026-03-15T00:00:23.830716",
+  "pallet": {
+    "length_mm": 1200,
+    "width_mm": 800,
+    "max_height_mm": 1800,
+    "max_weight_kg": 1500.0
+  },
+  "boxes": [
+    {
+      "sku_id": "SKU-SHO-2486",
+      "description": "Shoe Box",
+      "length_mm": 332,
+      "width_mm": 180,
+      "height_mm": 104,
+      "weight_kg": 0.84,
+      "strict_upright": true,
+      "fragile": false,
+      "stackable": true
+    },
+    {
+      "sku_id": "SKU-ELEC-1631",
+      "description": "Electronics",
+      "length_mm": 511,
+      "width_mm": 406,
+      "height_mm": 208,
+      "weight_kg": 7.37,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false
+    },
+    {
+      "sku_id": "SKU-WIN-6348",
+      "description": "Wine Case",
+      "length_mm": 331,
+      "width_mm": 266,
+      "height_mm": 310,
+      "weight_kg": 18.29,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false
+    },
+    {
+      "sku_id": "SKU-ELEC-5822",
+      "description": "Electronics",
+      "length_mm": 505,
+      "width_mm": 395,
+      "height_mm": 210,
+      "weight_kg": 8.01,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false
+    },
+    {
+      "sku_id": "SKU-BOX-1986",
+      "description": "Standard Box",
+      "length_mm": 167,
+      "width_mm": 156,
+      "height_mm": 316,
+      "weight_kg": 2.83,
+      "strict_upright": false,
+      "fragile": false,
+      "stackable": true
+    },
+    {
+      "sku_id": "SKU-FOOD-9198",
+      "description": "Food Package",
+      "length_mm": 286,
+      "width_mm": 184,
+      "height_mm": 164,
+      "weight_kg": 3.43,
+      "strict_upright": false,
+      "fragile": false,
+      "stackable": true
+    },
+    {
+      "sku_id": "SKU-BOX-3257",
+      "description": "Standard Box",
+      "length_mm": 168,
+      "width_mm": 170,
+      "height_mm": 291,
+      "weight_kg": 2.68,
+      "strict_upright": false,
+      "fragile": false,
+      "stackable": true
+    },
+    {
+      "sku_id": "SKU-ELEC-3288",
+      "description": "Electronics",
+      "length_mm": 499,
+      "width_mm": 420,
+      "height_mm": 181,
+      "weight_kg": 8.71,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false
+    },
+    {
+      "sku_id": "SKU-SHO-1529",
+      "description": "Shoe Box",
+      "length_mm": 320,
+      "width_mm": 203,
+      "height_mm": 113,
+      "weight_kg": 1.18,
+      "strict_upright": true,
+      "fragile": false,
+      "stackable": true
+    },
+    {
+      "sku_id": "SKU-SHO-9330",
+      "description": "Shoe Box",
+      "length_mm": 314,
+      "width_mm": 205,
+      "height_mm": 124,
+      "weight_kg": 0.92,
+      "strict_upright": true,
+      "fragile": false,
+      "stackable": true
+    }
+  ],
+  "metadata": {
+    "num_boxes": 10,
+    "pallet_type": "euro",
+    "seed": null
+  }
+}

@@ -1,0 +1,205 @@
+{
+    "task_id": "task_001",
+    "solver_version": "1.2.3",
+    "solve_time_ms": 0,
+    "placements": [
+        {
+            "sku_id": "SKU-CHIPS-4955",
+            "instance_index": 0,
+            "pallet_index": 0,
+            "position": {
+                "x_mm": 0,
+                "y_mm": 0,
+                "z_mm": 0
+            },
+            "dimensions_placed": {
+                "length_mm": 409,
+                "width_mm": 606,
+                "height_mm": 402
+            },
+            "rotation_code": "WLH"
+        },
+        {
+            "sku_id": "SKU-EGGS-4960",
+            "instance_index": 1,
+            "pallet_index": 0,
+            "position": {
+                "x_mm": 500,
+                "y_mm": 0,
+                "z_mm": 0
+            },
+            "dimensions_placed": {
+                "length_mm": 324,
+                "width_mm": 629,
+                "height_mm": 338
+            },
+            "rotation_code": "WLH"
+        },
+        {
+            "sku_id": "SKU-EGGS-4960",
+            "instance_index": 2,
+            "pallet_index": 0,
+            "position": {
+                "x_mm": 500,
+                "y_mm": 0,
+                "z_mm": 338
+            },
+            "dimensions_placed": {
+                "length_mm": 324,
+                "width_mm": 629,
+                "height_mm": 338
+            },
+            "rotation_code": "WLH"
+        },
+        {
+            "sku_id": "SKU-EGGS-4960",
+            "instance_index": 3,
+            "pallet_index": 0,
+            "position": {
+                "x_mm": 0,
+                "y_mm": 0,
+                "z_mm": 402
+            },
+            "dimensions_placed": {
+                "length_mm": 324,
+                "width_mm": 629,
+                "height_mm": 338
+            },
+            "rotation_code": "WLH"
+        },
+        {
+            "sku_id": "SKU-FROZEN-5991",
+            "instance_index": 4,
+            "pallet_index": 0,
+            "position": {
+                "x_mm": 0,
+                "y_mm": 700,
+                "z_mm": 0
+            },
+            "dimensions_placed": {
+                "length_mm": 400,
+                "width_mm": 193,
+                "height_mm": 306
+            },
+            "rotation_code": "LHW"
+        },
+        {
+            "sku_id": "SKU-FROZEN-5991",
+            "instance_index": 5,
+            "pallet_index": 0,
+            "position": {
+                "x_mm": 900,
+                "y_mm": 0,
+                "z_mm": 0
+            },
+            "dimensions_placed": {
+                "length_mm": 193,
+                "width_mm": 400,
+                "height_mm": 306
+            },
+            "rotation_code": "HLW"
+        },
+        {
+            "sku_id": "SKU-FROZEN-5991",
+            "instance_index": 6,
+            "pallet_index": 0,
+            "position": {
+                "x_mm": 400,
+                "y_mm": 700,
+                "z_mm": 0
+            },
+            "dimensions_placed": {
+                "length_mm": 400,
+                "width_mm": 193,
+                "height_mm": 306
+            },
+            "rotation_code": "LHW"
+        },
+        {
+            "sku_id": "SKU-FROZEN-5991",
+            "instance_index": 7,
+            "pallet_index": 0,
+            "position": {
+                "x_mm": 900,
+                "y_mm": 400,
+                "z_mm": 0
+            },
+            "dimensions_placed": {
+                "length_mm": 193,
+                "width_mm": 400,
+                "height_mm": 306
+            },
+            "rotation_code": "HLW"
+        },
+        {
+            "sku_id": "SKU-FROZEN-5991",
+            "instance_index": 8,
+            "pallet_index": 0,
+            "position": {
+                "x_mm": 800,
+                "y_mm": 800,
+                "z_mm": 0
+            },
+            "dimensions_placed": {
+                "length_mm": 400,
+                "width_mm": 193,
+                "height_mm": 306
+            },
+            "rotation_code": "LHW"
+        },
+        {
+            "sku_id": "SKU-FROZEN-5991",
+            "instance_index": 9,
+            "pallet_index": 0,
+            "position": {
+                "x_mm": 900,
+                "y_mm": 0,
+                "z_mm": 306
+            },
+            "dimensions_placed": {
+                "length_mm": 193,
+                "width_mm": 400,
+                "height_mm": 306
+            },
+            "rotation_code": "HLW"
+        },
+        {
+            "sku_id": "SKU-SUGAR-7056",
+            "instance_index": 10,
+            "pallet_index": 0,
+            "position": {
+                "x_mm": 900,
+                "y_mm": 400,
+                "z_mm": 306
+            },
+            "dimensions_placed": {
+                "length_mm": 157,
+                "width_mm": 292,
+                "height_mm": 409
+            },
+            "rotation_code": "HWL"
+        }
+    ],
+    "unplaced": [
+        {
+            "sku_id": "SKU-EGGS-4960",
+            "quantity_unplaced": 3,
+            "reason": "no_valid_position"
+        },
+        {
+            "sku_id": "SKU-BANANA-8268",
+            "quantity_unplaced": 3,
+            "reason": "no_valid_position"
+        },
+        {
+            "sku_id": "SKU-FROZEN-5991",
+            "quantity_unplaced": 3,
+            "reason": "no_valid_position"
+        }
+    ],
+    "stats": {
+        "total_boxes": 20,
+        "placed": 11,
+        "unplaced": 9
+    }
+}

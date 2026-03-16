@@ -1,0 +1,44 @@
+{
+  "task_id": "test_case_042",
+  "solver_version": "1.0.0",
+  "solve_time_ms": 248,
+  "placements": [
+    {
+      "sku_id": "SKU-SHO-1234",
+      "instance_index": 0,
+      "position": {
+        "x_mm": 0,
+        "y_mm": 0,
+        "z_mm": 0
+      },
+      "dimensions_placed": {
+        "length_mm": 330,
+        "width_mm": 190,
+        "height_mm": 115
+      },
+      "rotation_code": "LWH"
+    },
+    {
+      "sku_id": "SKU-SHO-1234",
+      "instance_index": 1,
+      "position": {
+        "x_mm": 330,
+        "y_mm": 0,
+        "z_mm": 0
+      },
+      "dimensions_placed": {
+        "length_mm": 330,
+        "width_mm": 190,
+        "height_mm": 115
+      },
+      "rotation_code": "LWH"
+    }
+  ],
+  "unplaced": [
+    {
+      "sku_id": "SKU-WIN-5678",
+      "quantity_unplaced": 1,
+      "reason": "weight_limit_exceeded"
+    }
+  ]
+}

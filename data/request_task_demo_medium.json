@@ -1,0 +1,108 @@
+{
+  "task_id": "task_demo_medium",
+  "metadata": {
+    "generated_at": "2026-03-15T01:41:16.764362",
+    "config_used": {
+      "seed": -5389184315742463657,
+      "complexity": "medium",
+      "pallet_count_min": 1,
+      "pallet_count_max": 3,
+      "pallet_type_ids": null,
+      "sku_count_min": 4,
+      "sku_count_max": 6,
+      "quantity_per_sku_min": 10,
+      "quantity_per_sku_max": 50,
+      "dimension_noise_ratio": 0.02,
+      "weight_noise_ratio": 0.02,
+      "force_fragile_ratio": 0.3,
+      "force_upright_ratio": 0.0,
+      "enable_load_bearing": true,
+      "include_archetypes": null,
+      "exclude_archetypes": null
+    },
+    "complexity_profile": "medium"
+  },
+  "shipment_info": {
+    "total_pallets": 1,
+    "total_sku_types": 4,
+    "total_boxes_estimated": 105
+  },
+  "pallets": [
+    {
+      "pallet_index": 0,
+      "type_id": "EUR_1200x1000",
+      "dimensions_mm": [
+        1200,
+        1000
+      ],
+      "max_height_mm": 2000,
+      "max_weight_kg": 1000.0
+    }
+  ],
+  "boxes": [
+    {
+      "sku_id": "SKU-EGGS-4444",
+      "description": "Eggs 360pcs",
+      "dimensions_mm": [
+        618,
+        317,
+        353
+      ],
+      "weight_kg": 21.76,
+      "quantity": 39,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 15.36,
+      "max_stack_layers": 1
+    },
+    {
+      "sku_id": "SKU-PAPER-4930",
+      "description": "Paper Towels",
+      "dimensions_mm": [
+        508,
+        402,
+        449
+      ],
+      "weight_kg": 3.93,
+      "quantity": 35,
+      "strict_upright": false,
+      "fragile": false,
+      "stackable": true,
+      "load_bearing_kg": 77.47,
+      "max_stack_layers": 5
+    },
+    {
+      "sku_id": "SKU-FROZEN-3227",
+      "description": "Frozen Food",
+      "dimensions_mm": [
+        398,
+        300,
+        200
+      ],
+      "weight_kg": 8.56,
+      "quantity": 15,
+      "strict_upright": false,
+      "fragile": false,
+      "stackable": true,
+      "load_bearing_kg": 130.2,
+      "max_stack_layers": 9
+    },
+    {
+      "sku_id": "SKU-WATER-2021",
+      "description": "Water Pack",
+      "dimensions_mm": [
+        275,
+        186,
+        336
+      ],
+      "weight_kg": 9.07,
+      "quantity": 16,
+      "strict_upright": true,
+      "fragile": false,
+      "stackable": true,
+      "load_bearing_kg": 101.55,
+      "max_stack_layers": 11
+    }
+  ]
+}

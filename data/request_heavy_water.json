@@ -1,0 +1,51 @@
+{
+  "task_id": "task_heavy_water",
+  "shipment_info": {
+    "total_pallets_available": 2,
+    "total_sku_types": 2
+  },
+  "pallets": [
+    {
+      "pallet_index": 0,
+      "type_id": "EUR_1200x1000",
+      "length_mm": 1200,
+      "width_mm": 1000,
+      "max_height_mm": 2000,
+      "max_weight_kg": 1000.0
+    },
+    {
+      "pallet_index": 1,
+      "type_id": "EUR_1200x800",
+      "length_mm": 1200,
+      "width_mm": 800,
+      "max_height_mm": 1800,
+      "max_weight_kg": 1000.0
+    }
+  ],
+  "boxes": [
+    {
+      "sku_id": "SKU-WATER-7672",
+      "description": "Water Pack",
+      "length_mm": 277,
+      "width_mm": 193,
+      "height_mm": 335,
+      "weight_kg": 9.16,
+      "quantity": 221,
+      "strict_upright": true,
+      "fragile": false,
+      "stackable": true
+    },
+    {
+      "sku_id": "SKU-SUGAR-6442",
+      "description": "Sugar 10kg",
+      "length_mm": 397,
+      "width_mm": 295,
+      "height_mm": 148,
+      "weight_kg": 10.02,
+      "quantity": 95,
+      "strict_upright": false,
+      "fragile": false,
+      "stackable": true
+    }
+  ]
+}

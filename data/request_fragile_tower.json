@@ -1,0 +1,71 @@
+{
+  "task_id": "task_fragile_tower",
+  "shipment_info": {
+    "total_pallets_available": 6,
+    "total_sku_types": 3
+  },
+  "pallets": [
+    {
+      "pallet_index": 0,
+      "type_id": "US_48x40",
+      "length_mm": 1219,
+      "width_mm": 1016,
+      "max_height_mm": 2000,
+      "max_weight_kg": 1000.0
+    },
+    {
+      "pallet_index": 1,
+      "type_id": "EUR_1200x800",
+      "length_mm": 1200,
+      "width_mm": 800,
+      "max_height_mm": 1800,
+      "max_weight_kg": 1000.0
+    },
+    {
+      "pallet_index": 1,
+      "type_id": "EUR_1200x800",
+      "length_mm": 1200,
+      "width_mm": 800,
+      "max_height_mm": 1800,
+      "max_weight_kg": 1000.0
+    }
+  ],
+  "boxes": [
+    {
+      "sku_id": "SKU-BANANA-3901",
+      "description": "Bananas Box",
+      "length_mm": 478,
+      "width_mm": 267,
+      "height_mm": 237,
+      "weight_kg": 18.9,
+      "quantity": 20,
+      "strict_upright": false,
+      "fragile": false,
+      "stackable": true
+    },
+    {
+      "sku_id": "SKU-CHIPS-3711",
+      "description": "Chips Carton",
+      "length_mm": 450,
+      "width_mm": 300,
+      "height_mm": 399,
+      "weight_kg": 1.8,
+      "quantity": 20,
+      "strict_upright": false,
+      "fragile": true,
+      "stackable": true
+    },
+    {
+      "sku_id": "SKU-EGGS-7972",
+      "description": "Eggs 360pcs",
+      "length_mm": 318,
+      "width_mm": 200,
+      "height_mm": 349,
+      "weight_kg": 21.74,
+      "quantity": 20,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": true
+    }
+  ]
+}

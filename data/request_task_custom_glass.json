@@ -1,0 +1,79 @@
+{
+  "task_id": "task_custom_glass",
+  "metadata": {
+    "generated_at": "2026-03-15T01:41:16.765934",
+    "config_used": {
+      "seed": 999,
+      "complexity": "hard",
+      "pallet_count_min": 1,
+      "pallet_count_max": 1,
+      "pallet_type_ids": null,
+      "sku_count_min": 7,
+      "sku_count_max": 10,
+      "quantity_per_sku_min": 20,
+      "quantity_per_sku_max": 80,
+      "dimension_noise_ratio": 0.05,
+      "weight_noise_ratio": 0.05,
+      "force_fragile_ratio": 0.6,
+      "force_upright_ratio": 0.0,
+      "enable_load_bearing": true,
+      "include_archetypes": [
+        "glass",
+        "wine"
+      ],
+      "exclude_archetypes": null
+    },
+    "complexity_profile": "hard"
+  },
+  "shipment_info": {
+    "total_pallets": 1,
+    "total_sku_types": 2,
+    "total_boxes_estimated": 53
+  },
+  "pallets": [
+    {
+      "pallet_index": 0,
+      "type_id": "US_48x40",
+      "dimensions_mm": [
+        1219,
+        1016
+      ],
+      "max_height_mm": 2000,
+      "max_weight_kg": 1000.0
+    }
+  ],
+  "boxes": [
+    {
+      "sku_id": "SKU-GLASS-4080",
+      "description": "Glass Jars",
+      "dimensions_mm": [
+        311,
+        203,
+        254
+      ],
+      "weight_kg": 12.17,
+      "quantity": 29,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 9.3,
+      "max_stack_layers": 3
+    },
+    {
+      "sku_id": "SKU-WINE-7591",
+      "description": "Wine Case",
+      "dimensions_mm": [
+        239,
+        175,
+        317
+      ],
+      "weight_kg": 8.23,
+      "quantity": 24,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 6.34,
+      "max_stack_layers": 1
+    }
+  ]
+}

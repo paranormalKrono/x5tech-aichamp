@@ -1,0 +1,717 @@
+{
+  "genome": {
+    "states": [
+      {
+        "state_name": "init",
+        "box_sort_key": "sturdy",
+        "box_sort_order": "desc",
+        "box_filter": "light_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 18704.688677963444,
+        "position_score_xy_weight": 148.7111236101619,
+        "orientation_priority": "random",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.6150310688316016,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 34,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6048924882465494,
+        "transitions": [
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gte",
+            "threshold": 0.5815756060384407,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gte",
+            "threshold": 0.6130021503634598,
+            "target_state": "finalize"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gte",
+            "threshold": 0.3075288551967061,
+            "target_state": "switch_pallet"
+          },
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "lt",
+            "threshold": 0.8235788490586746,
+            "target_state": "init"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "height",
+        "box_sort_order": "desc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_height",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 5152.280979014292,
+        "position_score_xy_weight": 118.45104827714373,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.604925551122263,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 10,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7852753893940346,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gte",
+            "threshold": 0.307697465551568,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lte",
+            "threshold": 0.6191984944090587,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "lte",
+            "threshold": 0.8784355033823292,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "volume",
+        "box_sort_order": "desc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_height",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 50,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 5152.280979014292,
+        "position_score_xy_weight": 118.45104827714373,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.4630773794453995,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 10,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7852753893940346,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gte",
+            "threshold": 0.307697465551568,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lte",
+            "threshold": 0.6191984944090587,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "lte",
+            "threshold": 0.8784355033823292,
+            "target_state": "place_fragile"
+          },
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gt",
+            "threshold": 0.46141629008557783,
+            "target_state": "place_heavy"
+          }
+        ]
+      },
+      {
+        "state_name": "place_heavy",
+        "box_sort_key": "weight",
+        "box_sort_order": "desc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_height",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": true,
+        "prefer_more_support": false,
+        "position_score_z_weight": 6048.154421887736,
+        "position_score_xy_weight": 97.31884606037949,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": true,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.4718231381365713,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 11,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8733451644270962,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gt",
+            "threshold": 0.5274745994934531,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gt",
+            "threshold": 0.39579743803318196,
+            "target_state": "fill_gaps"
+          }
+        ]
+      },
+      {
+        "state_name": "init",
+        "box_sort_key": "weight",
+        "box_sort_order": "desc",
+        "box_filter": "light_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 50,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 18704.688677963444,
+        "position_score_xy_weight": 148.7111236101619,
+        "orientation_priority": "original",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.7757875850705491,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 34,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6048924882465494,
+        "transitions": [
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gte",
+            "threshold": 0.5815756060384407,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gte",
+            "threshold": 0.6130021503634598,
+            "target_state": "finalize"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gte",
+            "threshold": 0.3075288551967061,
+            "target_state": "switch_pallet"
+          }
+        ]
+      },
+      {
+        "state_name": "init",
+        "box_sort_key": "weight",
+        "box_sort_order": "desc",
+        "box_filter": "light_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 18704.688677963444,
+        "position_score_xy_weight": 148.7111236101619,
+        "orientation_priority": "height_min",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.6512798726695899,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 34,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6048924882465494,
+        "transitions": [
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gte",
+            "threshold": 0.5815756060384407,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gte",
+            "threshold": 0.6130021503634598,
+            "target_state": "finalize"
+          }
+        ]
+      },
+      {
+        "state_name": "init",
+        "box_sort_key": "weight",
+        "box_sort_order": "desc",
+        "box_filter": "light_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 18704.688677963444,
+        "position_score_xy_weight": 148.7111236101619,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.4257490240978555,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 34,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6048924882465494,
+        "transitions": [
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gte",
+            "threshold": 0.5815756060384407,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gte",
+            "threshold": 0.6130021503634598,
+            "target_state": "finalize"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gte",
+            "threshold": 0.3075288551967061,
+            "target_state": "switch_pallet"
+          }
+        ]
+      },
+      {
+        "state_name": "init",
+        "box_sort_key": "sturdy",
+        "box_sort_order": "desc",
+        "box_filter": "light_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 18704.688677963444,
+        "position_score_xy_weight": 148.7111236101619,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.4108407324421306,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 34,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6048924882465494,
+        "transitions": [
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gte",
+            "threshold": 0.5815756060384407,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gte",
+            "threshold": 0.6130021503634598,
+            "target_state": "finalize"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gte",
+            "threshold": 0.3075288551967061,
+            "target_state": "switch_pallet"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "volume",
+        "box_sort_order": "desc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_height",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 5152.280979014292,
+        "position_score_xy_weight": 118.45104827714373,
+        "orientation_priority": "random",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.5018084926445393,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 10,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7852753893940346,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gte",
+            "threshold": 0.307697465551568,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lte",
+            "threshold": 0.6191984944090587,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "lte",
+            "threshold": 0.8784355033823292,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "init",
+        "box_sort_key": "sturdy",
+        "box_sort_order": "desc",
+        "box_filter": "light_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 18704.688677963444,
+        "position_score_xy_weight": 148.7111236101619,
+        "orientation_priority": "height_min",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.5044408745443455,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 34,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6048924882465494,
+        "transitions": [
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gte",
+            "threshold": 0.5815756060384407,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gte",
+            "threshold": 0.6130021503634598,
+            "target_state": "finalize"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gte",
+            "threshold": 0.3075288551967061,
+            "target_state": "switch_pallet"
+          },
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "lt",
+            "threshold": 0.8235788490586746,
+            "target_state": "init"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "volume",
+        "box_sort_order": "desc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_height",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 5152.280979014292,
+        "position_score_xy_weight": 118.45104827714373,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.6678725511606229,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 10,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7852753893940346,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gte",
+            "threshold": 0.307697465551568,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lte",
+            "threshold": 0.6191984944090587,
+            "target_state": "init"
+          }
+        ]
+      },
+      {
+        "state_name": "init",
+        "box_sort_key": "sturdy",
+        "box_sort_order": "asc",
+        "box_filter": "light_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 15167.164603104928,
+        "position_score_xy_weight": 163.1090287591602,
+        "orientation_priority": "stable",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.5446600782189035,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 1,
+        "max_boxes_in_state": 50,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.6053727727972554,
+        "transitions": []
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "volume",
+        "box_sort_order": "desc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_height",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 5152.280979014292,
+        "position_score_xy_weight": 118.45104827714373,
+        "orientation_priority": "stable",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.4544075787219963,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 10,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7852753893940346,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gte",
+            "threshold": 0.307697465551568,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lte",
+            "threshold": 0.6191984944090587,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "lte",
+            "threshold": 0.8784355033823292,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "place_heavy",
+        "box_sort_key": "weight",
+        "box_sort_order": "desc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_height",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": true,
+        "prefer_more_support": false,
+        "position_score_z_weight": 6048.154421887736,
+        "position_score_xy_weight": 97.31884606037949,
+        "orientation_priority": "original",
+        "allow_rotation": true,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.6418002256099203,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 11,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8733451644270962,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gt",
+            "threshold": 0.5274745994934531,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gt",
+            "threshold": 0.39579743803318196,
+            "target_state": "fill_gaps"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "fragile",
+        "box_sort_order": "desc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_height",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 100,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 5152.280979014292,
+        "position_score_xy_weight": 118.45104827714373,
+        "orientation_priority": "original",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.43699327300776514,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 4,
+        "max_boxes_in_state": 10,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7852753893940346,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gte",
+            "threshold": 0.307697465551568,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lte",
+            "threshold": 0.6191984944090587,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "lte",
+            "threshold": 0.8784355033823292,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "place_heavy",
+        "box_sort_key": "height",
+        "box_sort_order": "desc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_height",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": true,
+        "prefer_more_support": false,
+        "position_score_z_weight": 6048.154421887736,
+        "position_score_xy_weight": 97.31884606037949,
+        "orientation_priority": "random",
+        "allow_rotation": true,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.4178764582749197,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 11,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8733451644270962,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gt",
+            "threshold": 0.5274745994934531,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gt",
+            "threshold": 0.39579743803318196,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lt",
+            "threshold": 0.5806293034768218,
+            "target_state": "place_heavy"
+          },
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gt",
+            "threshold": 0.826199334064275,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "place_heavy",
+        "box_sort_key": "sturdy",
+        "box_sort_order": "desc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_height",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": true,
+        "prefer_more_support": false,
+        "position_score_z_weight": 6048.154421887736,
+        "position_score_xy_weight": 97.31884606037949,
+        "orientation_priority": "height_min",
+        "allow_rotation": true,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.49725664209183784,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 11,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8733451644270962,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gt",
+            "threshold": 0.5274745994934531,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gt",
+            "threshold": 0.39579743803318196,
+            "target_state": "fill_gaps"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lt",
+            "threshold": 0.49533553266942354,
+            "target_state": "place_fragile"
+          }
+        ]
+      }
+    ],
+    "start_state": "place_heavy",
+    "mutation_rate": 0.36717202881181726
+  },
+  "score": 0.7035,
+  "stats": {
+    "placed_count": 11,
+    "failed_count": 56,
+    "total_requested": 67,
+    "placement_rate": 0.16417910447761194,
+    "state_transitions": 12,
+    "states_used": [
+      "place_heavy"
+    ],
+    "final_state": "fill_gaps"
+  },
+  "saved_at": "2026-03-15T12:22:38.196499",
+  "version": "1.0"
+}

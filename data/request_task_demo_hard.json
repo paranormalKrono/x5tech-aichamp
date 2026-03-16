@@ -1,0 +1,208 @@
+{
+  "task_id": "task_demo_hard",
+  "metadata": {
+    "generated_at": "2026-03-15T01:41:16.765132",
+    "config_used": {
+      "seed": 4665528106172241728,
+      "complexity": "hard",
+      "pallet_count_min": 1,
+      "pallet_count_max": 3,
+      "pallet_type_ids": null,
+      "sku_count_min": 7,
+      "sku_count_max": 10,
+      "quantity_per_sku_min": 20,
+      "quantity_per_sku_max": 80,
+      "dimension_noise_ratio": 0.05,
+      "weight_noise_ratio": 0.05,
+      "force_fragile_ratio": 0.6,
+      "force_upright_ratio": 0.0,
+      "enable_load_bearing": true,
+      "include_archetypes": null,
+      "exclude_archetypes": null
+    },
+    "complexity_profile": "hard"
+  },
+  "shipment_info": {
+    "total_pallets": 1,
+    "total_sku_types": 9,
+    "total_boxes_estimated": 433
+  },
+  "pallets": [
+    {
+      "pallet_index": 0,
+      "type_id": "EUR_1200x1000",
+      "dimensions_mm": [
+        1200,
+        1000
+      ],
+      "max_height_mm": 2000,
+      "max_weight_kg": 1000.0
+    },
+    {
+      "pallet_index": 1,
+      "type_id": "EUR_1200x1000",
+      "dimensions_mm": [
+        1200,
+        1000
+      ],
+      "max_height_mm": 2000,
+      "max_weight_kg": 1000.0
+    },
+    {
+      "pallet_index": 2,
+      "type_id": "EUR_1200x1000",
+      "dimensions_mm": [
+        1200,
+        1000
+      ],
+      "max_height_mm": 2000,
+      "max_weight_kg": 1000.0
+    }
+  ],
+  "boxes": [
+    {
+      "sku_id": "SKU-EGGS-4960",
+      "description": "Eggs 360pcs",
+      "dimensions_mm": [
+        629,
+        324,
+        338
+      ],
+      "weight_kg": 22.88,
+      "quantity": 23,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 13.22,
+      "max_stack_layers": 2
+    },
+    {
+      "sku_id": "SKU-BANANA-8268",
+      "description": "Bananas Box",
+      "dimensions_mm": [
+        521,
+        394,
+        233
+      ],
+      "weight_kg": 18.95,
+      "quantity": 16,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 13.65,
+      "max_stack_layers": 3
+    },
+    {
+      "sku_id": "SKU-FROZEN-5991",
+      "description": "Frozen Food",
+      "dimensions_mm": [
+        400,
+        306,
+        193
+      ],
+      "weight_kg": 8.76,
+      "quantity": 10,
+      "strict_upright": false,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 9.25,
+      "max_stack_layers": 1
+    },
+    {
+      "sku_id": "SKU-CANNED-6445",
+      "description": "Canned Peas",
+      "dimensions_mm": [
+        287,
+        206,
+        126
+      ],
+      "weight_kg": 5.91,
+      "quantity": 5,
+      "strict_upright": true,
+      "fragile": false,
+      "stackable": true,
+      "load_bearing_kg": 83.68,
+      "max_stack_layers": 8
+    },
+    {
+      "sku_id": "SKU-WATER-3183",
+      "description": "Water Pack",
+      "dimensions_mm": [
+        280,
+        190,
+        315
+      ],
+      "weight_kg": 9.61,
+      "quantity": 2,
+      "strict_upright": true,
+      "fragile": false,
+      "stackable": true,
+      "load_bearing_kg": 182.14,
+      "max_stack_layers": 6
+    },
+    {
+      "sku_id": "SKU-CHIPS-4955",
+      "description": "Chips Carton",
+      "dimensions_mm": [
+        606,
+        409,
+        402
+      ],
+      "weight_kg": 1.78,
+      "quantity": 1,
+      "strict_upright": false,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 2.06,
+      "max_stack_layers": 2
+    },
+    {
+      "sku_id": "SKU-GLASS-2494",
+      "description": "Glass Jars",
+      "dimensions_mm": [
+        302,
+        192,
+        252
+      ],
+      "weight_kg": 11.87,
+      "quantity": 3,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 14.83,
+      "max_stack_layers": 1
+    },
+    {
+      "sku_id": "SKU-WINE-7042",
+      "description": "Wine Case",
+      "dimensions_mm": [
+        257,
+        178,
+        321
+      ],
+      "weight_kg": 8.36,
+      "quantity": 4,
+      "strict_upright": true,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 5.97,
+      "max_stack_layers": 1
+    },
+    {
+      "sku_id": "SKU-SUGAR-7056",
+      "description": "Sugar 10kg",
+      "dimensions_mm": [
+        409,
+        292,
+        157
+      ],
+      "weight_kg": 10.23,
+      "quantity": 3,
+      "strict_upright": false,
+      "fragile": true,
+      "stackable": false,
+      "load_bearing_kg": 6.92,
+      "max_stack_layers": 1
+    }
+  ]
+}

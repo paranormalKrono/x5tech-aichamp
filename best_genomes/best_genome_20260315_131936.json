@@ -1,0 +1,1113 @@
+{
+  "genome": {
+    "states": [
+      {
+        "state_name": "fill_bottom",
+        "box_sort_key": "height",
+        "box_sort_order": "desc",
+        "box_filter": "heavy_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 100,
+        "prefer_lower_z": false,
+        "prefer_more_support": false,
+        "position_score_z_weight": 8887.87322697529,
+        "position_score_xy_weight": 87.08596062644892,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.7034963719506712,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 3,
+        "max_boxes_in_state": 25,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.7007542609863942,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gt",
+            "threshold": 0.7670522440603951,
+            "target_state": "place_fragile"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lte",
+            "threshold": 0.3301310310843846,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_bottom",
+        "box_sort_key": "volume",
+        "box_sort_order": "asc",
+        "box_filter": "heavy_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": false,
+        "prefer_more_support": false,
+        "position_score_z_weight": 15444.626109636347,
+        "position_score_xy_weight": 111.23887652443827,
+        "orientation_priority": "original",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.6184104239949781,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 24,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8572623715719062,
+        "transitions": [
+          {
+            "condition_type": "fragile_remaining",
+            "operator": "lt",
+            "threshold": 0.5481361238680822,
+            "target_state": "place_heavy"
+          }
+        ]
+      },
+      {
+        "state_name": "finalize",
+        "box_sort_key": "sturdy",
+        "box_sort_order": "desc",
+        "box_filter": "all",
+        "pallet_select_key": "weight_capacity",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 8576.59255189734,
+        "position_score_xy_weight": 145.84275982592155,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.4075781337025476,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 44,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7895864826039427,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "lt",
+            "threshold": 0.5635649690744496,
+            "target_state": "finalize"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_bottom",
+        "box_sort_key": "fragile",
+        "box_sort_order": "desc",
+        "box_filter": "heavy_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 6240.291837587027,
+        "position_score_xy_weight": 176.79946918104923,
+        "orientation_priority": "height_min",
+        "allow_rotation": true,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.5555104827186048,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 3,
+        "max_boxes_in_state": 12,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.8053286230390925,
+        "transitions": []
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "fragile",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 16315.785631209266,
+        "position_score_xy_weight": 166.40954321970497,
+        "orientation_priority": "original",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.640595834078008,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 48,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6710712104330162,
+        "transitions": [
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gte",
+            "threshold": 0.8164645063243836,
+            "target_state": "fill_bottom"
+          },
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gte",
+            "threshold": 0.38845784473367584,
+            "target_state": "place_heavy"
+          }
+        ]
+      },
+      {
+        "state_name": "finalize",
+        "box_sort_key": "sturdy",
+        "box_sort_order": "desc",
+        "box_filter": "all",
+        "pallet_select_key": "weight_capacity",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 100,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 8576.59255189734,
+        "position_score_xy_weight": 145.84275982592155,
+        "orientation_priority": "stable",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.7319574017706558,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 44,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7895864826039427,
+        "transitions": []
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "fragile",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 16315.785631209266,
+        "position_score_xy_weight": 166.40954321970497,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.5338164981842877,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 48,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6710712104330162,
+        "transitions": [
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gte",
+            "threshold": 0.8545045573592698,
+            "target_state": "finalize"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lte",
+            "threshold": 0.3880085932535179,
+            "target_state": "fill_gaps"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_bottom",
+        "box_sort_key": "volume",
+        "box_sort_order": "asc",
+        "box_filter": "heavy_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": false,
+        "prefer_more_support": false,
+        "position_score_z_weight": 15444.626109636347,
+        "position_score_xy_weight": 111.23887652443827,
+        "orientation_priority": "original",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.6184104239949781,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 24,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8572623715719062,
+        "transitions": [
+          {
+            "condition_type": "fragile_remaining",
+            "operator": "lt",
+            "threshold": 0.5481361238680822,
+            "target_state": "place_heavy"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lt",
+            "threshold": 0.6773208153030281,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_gaps",
+        "box_sort_key": "volume",
+        "box_sort_order": "asc",
+        "box_filter": "light_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 50,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 13117.452561198583,
+        "position_score_xy_weight": 59.038344697560504,
+        "orientation_priority": "original",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.5986386880505212,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 36,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8978569795742637,
+        "transitions": [
+          {
+            "condition_type": "fragile_remaining",
+            "operator": "gt",
+            "threshold": 0.6352783193992598,
+            "target_state": "place_heavy"
+          },
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "lte",
+            "threshold": 0.45267433144056746,
+            "target_state": "init"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_gaps",
+        "box_sort_key": "sturdy",
+        "box_sort_order": "asc",
+        "box_filter": "light_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 50,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 13117.452561198583,
+        "position_score_xy_weight": 59.038344697560504,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.4466300235922046,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 36,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8978569795742637,
+        "transitions": [
+          {
+            "condition_type": "fragile_remaining",
+            "operator": "gt",
+            "threshold": 0.6352783193992598,
+            "target_state": "place_heavy"
+          },
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "lte",
+            "threshold": 0.45267433144056746,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "lt",
+            "threshold": 0.8232039692757627,
+            "target_state": "fill_gaps"
+          }
+        ]
+      },
+      {
+        "state_name": "finalize",
+        "box_sort_key": "volume",
+        "box_sort_order": "desc",
+        "box_filter": "all",
+        "pallet_select_key": "weight_capacity",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 50,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 8576.59255189734,
+        "position_score_xy_weight": 145.84275982592155,
+        "orientation_priority": "original",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.6697060941547274,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 44,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7895864826039427,
+        "transitions": [
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lte",
+            "threshold": 0.707776520051117,
+            "target_state": "finalize"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "fragile",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 16315.785631209266,
+        "position_score_xy_weight": 166.40954321970497,
+        "orientation_priority": "original",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.640595834078008,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 48,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6710712104330162,
+        "transitions": []
+      },
+      {
+        "state_name": "fill_gaps",
+        "box_sort_key": "volume",
+        "box_sort_order": "asc",
+        "box_filter": "light_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 100,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 13117.452561198583,
+        "position_score_xy_weight": 59.038344697560504,
+        "orientation_priority": "height_min",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.5825029934069937,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 36,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8978569795742637,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gte",
+            "threshold": 0.406253504103005,
+            "target_state": "place_heavy"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gte",
+            "threshold": 0.3154982718942046,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "volume",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 16315.785631209266,
+        "position_score_xy_weight": 166.40954321970497,
+        "orientation_priority": "height_min",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.5119761731218904,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 48,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6710712104330162,
+        "transitions": [
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lt",
+            "threshold": 0.3403745417336972,
+            "target_state": "init"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "fragile",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 16315.785631209266,
+        "position_score_xy_weight": 166.40954321970497,
+        "orientation_priority": "original",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.640595834078008,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 48,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6710712104330162,
+        "transitions": [
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gte",
+            "threshold": 0.7005877978183898,
+            "target_state": "finalize"
+          },
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "lte",
+            "threshold": 0.44700179521680306,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_bottom",
+        "box_sort_key": "height",
+        "box_sort_order": "asc",
+        "box_filter": "heavy_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": false,
+        "prefer_more_support": false,
+        "position_score_z_weight": 15444.626109636347,
+        "position_score_xy_weight": 111.23887652443827,
+        "orientation_priority": "random",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.47702210492742875,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 24,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8572623715719062,
+        "transitions": [
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lte",
+            "threshold": 0.6685609105475254,
+            "target_state": "place_fragile"
+          },
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "lte",
+            "threshold": 0.7882303945536819,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "fragile",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 16315.785631209266,
+        "position_score_xy_weight": 166.40954321970497,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.5338164981842877,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 48,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6710712104330162,
+        "transitions": []
+      },
+      {
+        "state_name": "finalize",
+        "box_sort_key": "height",
+        "box_sort_order": "desc",
+        "box_filter": "all",
+        "pallet_select_key": "weight_capacity",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 8576.59255189734,
+        "position_score_xy_weight": 145.84275982592155,
+        "orientation_priority": "stable",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.44811905108197875,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 44,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7895864826039427,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "lt",
+            "threshold": 0.44718793977885274,
+            "target_state": "fill_bottom"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_bottom",
+        "box_sort_key": "height",
+        "box_sort_order": "asc",
+        "box_filter": "heavy_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": false,
+        "prefer_more_support": false,
+        "position_score_z_weight": 15444.626109636347,
+        "position_score_xy_weight": 111.23887652443827,
+        "orientation_priority": "random",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.47702210492742875,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 24,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8572623715719062,
+        "transitions": []
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "volume",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 16315.785631209266,
+        "position_score_xy_weight": 166.40954321970497,
+        "orientation_priority": "random",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.681236332163225,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 48,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6710712104330162,
+        "transitions": [
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lt",
+            "threshold": 0.3403745417336972,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gte",
+            "threshold": 0.35118392642058716,
+            "target_state": "fill_gaps"
+          }
+        ]
+      },
+      {
+        "state_name": "finalize",
+        "box_sort_key": "volume",
+        "box_sort_order": "desc",
+        "box_filter": "all",
+        "pallet_select_key": "weight_capacity",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 50,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 8576.59255189734,
+        "position_score_xy_weight": 145.84275982592155,
+        "orientation_priority": "height_min",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.5844175871560492,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 44,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7895864826039427,
+        "transitions": [
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lt",
+            "threshold": 0.5676750753070618,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "height",
+        "box_sort_order": "desc",
+        "box_filter": "sturdy_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 50,
+        "prefer_lower_z": true,
+        "prefer_more_support": false,
+        "position_score_z_weight": 7538.985662902725,
+        "position_score_xy_weight": 158.04702961431406,
+        "orientation_priority": "height_min",
+        "allow_rotation": true,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.4271811272872762,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 1,
+        "max_boxes_in_state": 10,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.641247459149088,
+        "transitions": [
+          {
+            "condition_type": "height_ratio",
+            "operator": "lt",
+            "threshold": 0.5279038648446925,
+            "target_state": "place_fragile"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gt",
+            "threshold": 0.7992256619436849,
+            "target_state": "fill_bottom"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_bottom",
+        "box_sort_key": "height",
+        "box_sort_order": "asc",
+        "box_filter": "heavy_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": false,
+        "prefer_more_support": false,
+        "position_score_z_weight": 15444.626109636347,
+        "position_score_xy_weight": 111.23887652443827,
+        "orientation_priority": "random",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.47702210492742875,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 24,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8572623715719062,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "lte",
+            "threshold": 0.5416177739404389,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "sturdy",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 16315.785631209266,
+        "position_score_xy_weight": 166.40954321970497,
+        "orientation_priority": "random",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.4236584802946749,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 48,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6710712104330162,
+        "transitions": [
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lt",
+            "threshold": 0.3403745417336972,
+            "target_state": "init"
+          },
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gt",
+            "threshold": 0.302796615631251,
+            "target_state": "finalize"
+          }
+        ]
+      },
+      {
+        "state_name": "finalize",
+        "box_sort_key": "volume",
+        "box_sort_order": "desc",
+        "box_filter": "all",
+        "pallet_select_key": "weight_capacity",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 8576.59255189734,
+        "position_score_xy_weight": 145.84275982592155,
+        "orientation_priority": "stable",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.7747707543295363,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 44,
+        "switch_pallet_on_full": true,
+        "pallet_fill_threshold": 0.7895864826039427,
+        "transitions": []
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "height",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 100,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 16315.785631209266,
+        "position_score_xy_weight": 166.40954321970497,
+        "orientation_priority": "original",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.7833190347748291,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 48,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6710712104330162,
+        "transitions": [
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gte",
+            "threshold": 0.8545045573592698,
+            "target_state": "finalize"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "weight",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 50,
+        "prefer_lower_z": true,
+        "prefer_more_support": true,
+        "position_score_z_weight": 16315.785631209266,
+        "position_score_xy_weight": 166.40954321970497,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.5886147155945273,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 5,
+        "max_boxes_in_state": 48,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.6710712104330162,
+        "transitions": [
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gte",
+            "threshold": 0.41983274950704386,
+            "target_state": "finalize"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_bottom",
+        "box_sort_key": "fragile",
+        "box_sort_order": "asc",
+        "box_filter": "heavy_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": false,
+        "prefer_more_support": false,
+        "position_score_z_weight": 15444.626109636347,
+        "position_score_xy_weight": 111.23887652443827,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.4237579900681683,
+        "check_support_on_ground": false,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 24,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8572623715719062,
+        "transitions": [
+          {
+            "condition_type": "fragile_remaining",
+            "operator": "lt",
+            "threshold": 0.5481361238680822,
+            "target_state": "place_heavy"
+          },
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "gt",
+            "threshold": 0.49885603737478224,
+            "target_state": "place_heavy"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_bottom",
+        "box_sort_key": "weight",
+        "box_sort_order": "desc",
+        "box_filter": "heavy_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": false,
+        "prefer_more_support": false,
+        "position_score_z_weight": 8887.87322697529,
+        "position_score_xy_weight": 87.08596062644892,
+        "orientation_priority": "height_min",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.7102611642850094,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 3,
+        "max_boxes_in_state": 25,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.7007542609863942,
+        "transitions": [
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "gt",
+            "threshold": 0.7670522440603951,
+            "target_state": "place_fragile"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "lte",
+            "threshold": 0.3301310310843846,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "place_fragile",
+        "box_sort_key": "height",
+        "box_sort_order": "desc",
+        "box_filter": "sturdy_only",
+        "pallet_select_key": "index",
+        "pallet_select_order": "desc",
+        "grid_size_mm": 50,
+        "prefer_lower_z": true,
+        "prefer_more_support": false,
+        "position_score_z_weight": 7538.985662902725,
+        "position_score_xy_weight": 158.04702961431406,
+        "orientation_priority": "height_min",
+        "allow_rotation": true,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.4271811272872762,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 1,
+        "max_boxes_in_state": 10,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.641247459149088,
+        "transitions": [
+          {
+            "condition_type": "height_ratio",
+            "operator": "lt",
+            "threshold": 0.5279038648446925,
+            "target_state": "place_fragile"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gt",
+            "threshold": 0.7992256619436849,
+            "target_state": "fill_bottom"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_gaps",
+        "box_sort_key": "sturdy",
+        "box_sort_order": "asc",
+        "box_filter": "light_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 100,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 13117.452561198583,
+        "position_score_xy_weight": 59.038344697560504,
+        "orientation_priority": "original",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.357418141378264,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 36,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8978569795742637,
+        "transitions": []
+      },
+      {
+        "state_name": "place_heavy",
+        "box_sort_key": "sturdy",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 75,
+        "prefer_lower_z": false,
+        "prefer_more_support": false,
+        "position_score_z_weight": 12979.004127451382,
+        "position_score_xy_weight": 173.50406560636765,
+        "orientation_priority": "random",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.7727236199714165,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 1,
+        "max_boxes_in_state": 12,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.7844769621626737,
+        "transitions": [
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "lte",
+            "threshold": 0.5253873202811926,
+            "target_state": "build_layer"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gt",
+            "threshold": 0.407084177402467,
+            "target_state": "switch_pallet"
+          },
+          {
+            "condition_type": "weight_ratio",
+            "operator": "gte",
+            "threshold": 0.4464996972322482,
+            "target_state": "place_fragile"
+          }
+        ]
+      },
+      {
+        "state_name": "place_heavy",
+        "box_sort_key": "volume",
+        "box_sort_order": "asc",
+        "box_filter": "fragile_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 25,
+        "prefer_lower_z": false,
+        "prefer_more_support": false,
+        "position_score_z_weight": 12979.004127451382,
+        "position_score_xy_weight": 173.50406560636765,
+        "orientation_priority": "height_min",
+        "allow_rotation": false,
+        "respect_strict_upright": false,
+        "min_support_ratio": 0.6962894705888368,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 1,
+        "max_boxes_in_state": 12,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.7844769621626737,
+        "transitions": [
+          {
+            "condition_type": "boxes_remaining",
+            "operator": "lte",
+            "threshold": 0.5253873202811926,
+            "target_state": "build_layer"
+          },
+          {
+            "condition_type": "height_ratio",
+            "operator": "gt",
+            "threshold": 0.407084177402467,
+            "target_state": "switch_pallet"
+          }
+        ]
+      },
+      {
+        "state_name": "fill_gaps",
+        "box_sort_key": "weight",
+        "box_sort_order": "asc",
+        "box_filter": "light_only",
+        "pallet_select_key": "remaining_volume",
+        "pallet_select_order": "asc",
+        "grid_size_mm": 100,
+        "prefer_lower_z": false,
+        "prefer_more_support": true,
+        "position_score_z_weight": 13117.452561198583,
+        "position_score_xy_weight": 59.038344697560504,
+        "orientation_priority": "volume_optimal",
+        "allow_rotation": false,
+        "respect_strict_upright": true,
+        "min_support_ratio": 0.7765946370709474,
+        "check_support_on_ground": true,
+        "min_boxes_in_state": 2,
+        "max_boxes_in_state": 36,
+        "switch_pallet_on_full": false,
+        "pallet_fill_threshold": 0.8978569795742637,
+        "transitions": [
+          {
+            "condition_type": "fragile_remaining",
+            "operator": "gt",
+            "threshold": 0.6352783193992598,
+            "target_state": "place_heavy"
+          },
+          {
+            "condition_type": "pallet_fill_ratio",
+            "operator": "lte",
+            "threshold": 0.45267433144056746,
+            "target_state": "init"
+          }
+        ]
+      }
+    ],
+    "start_state": "finalize",
+    "mutation_rate": 0.337107013742861
+  },
+  "score": 0.2498,
+  "stats": {
+    "placed_count": 15,
+    "failed_count": 52,
+    "total_requested": 67,
+    "placement_rate": 0.22388059701492538,
+    "state_transitions": 115,
+    "states_used": [
+      "finalize"
+    ],
+    "final_state": "finalize"
+  },
+  "saved_at": "2026-03-15T13:19:36.076184",
+  "version": "1.0"
+}
